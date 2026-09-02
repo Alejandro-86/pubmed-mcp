@@ -6,7 +6,7 @@ Uses pytest-httpx to mock all HTTP calls — no real network access.
 import pytest
 from pytest_httpx import HTTPXMock
 
-from pubmed_mcp.client.pubmed import PubMedClient, PubMedAPIError
+from pubmed_mcp.client.pubmed import PubMedAPIError, PubMedClient
 
 ESEARCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 EFETCH_URL  = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"

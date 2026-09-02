@@ -5,11 +5,12 @@ no real HTTP or MCP server involved.
 """
 
 import pytest
+
 from pubmed_mcp.client.pubmed import PubMedAPIError
-from pubmed_mcp.models import Article, Citation, SearchResult
-from pubmed_mcp.tools.search import handle_search
-from pubmed_mcp.tools.fetch import handle_fetch
+from pubmed_mcp.models import Article, SearchResult
 from pubmed_mcp.tools.cite import handle_cite
+from pubmed_mcp.tools.fetch import handle_fetch
+from pubmed_mcp.tools.search import handle_search
 
 
 def _make_article(pmid: str = "12345678") -> Article:

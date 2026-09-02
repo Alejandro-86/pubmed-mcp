@@ -1,6 +1,7 @@
 """Unit tests for PubMed data models."""
 
 import pytest
+
 from pubmed_mcp.models import Article, Citation, SearchResult
 
 

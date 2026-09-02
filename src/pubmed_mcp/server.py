@@ -15,15 +15,15 @@ Security properties:
 import asyncio
 import logging
 
+from mcp import types
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
-from mcp import types
 
-from pubmed_mcp.client.pubmed import PubMedClient, PubMedAPIError
+from pubmed_mcp.client.pubmed import PubMedAPIError, PubMedClient
 from pubmed_mcp.config import settings
-from pubmed_mcp.tools.search import handle_search
-from pubmed_mcp.tools.fetch import handle_fetch
 from pubmed_mcp.tools.cite import handle_cite
+from pubmed_mcp.tools.fetch import handle_fetch
+from pubmed_mcp.tools.search import handle_search
 
 logger = logging.getLogger(__name__)
 
