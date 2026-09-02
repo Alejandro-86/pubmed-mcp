@@ -46,7 +46,7 @@ async def list_tools() -> list[types.Tool]:
                 "Returns article titles and PMIDs with source URLs. "
                 "Use fetch_abstract to get the full abstract."
             ),
-            inputSchema={
+            input_schema={
                 "type": "object",
                 "properties": {
                     "query": {
@@ -68,7 +68,7 @@ async def list_tools() -> list[types.Tool]:
                 "Fetch the full abstract and metadata for a PubMed article by PMID. "
                 "Response always includes a mandatory citation with the PubMed source URL."
             ),
-            inputSchema={
+            input_schema={
                 "type": "object",
                 "properties": {
                     "pmid": {
@@ -86,7 +86,7 @@ async def list_tools() -> list[types.Tool]:
                 "Includes authors, year, title, journal, DOI (if available), "
                 "and always the PubMed URL."
             ),
-            inputSchema={
+            input_schema={
                 "type": "object",
                 "properties": {
                     "pmid": {
@@ -121,7 +121,7 @@ async def call_tool(
         match name:
             case "search_pubmed":
                 query = str(arguments["query"])
-                max_results = int(arguments.get("max_results", settings.max_search_results))
+                max_results = int(str(arguments.get("max_results", settings.max_search_results)))
                 text = await handle_search(_client, query=query, max_results=max_results)
 
             case "fetch_abstract":
